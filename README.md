@@ -21,18 +21,70 @@
 
 >* __代码片段__
 ```
-#include <stdio.h> 
-#include<math.h>
-int main(void)
-{
-	float benjin,lilv,benxiheji;
-	int years;
-	printf("请输入本金，存储年份，年利率：\n");
-	while (scanf("%f %d %f", &benjin, &years, &lilv) == 3)
-	{
-		benxiheji = benjin * pow((1.0 + lilv), years);
-		printf("%d年之后的本息合计为%f\n", years, benxiheji);
-		printf("请输入本金，存储年份，年利率：（按q退出）\n");
-	}
+package com.yugioh;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+public class MainActivity extends Activity {
+    private Button button;
+    private Button button01;
+    boolean isIconChange1 = false;
+    boolean isIconChange2 = false;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isIconChange1){
+                    button.setBackgroundResource(R.drawable.mainbutton);
+                    isIconChange1 = false;
+                }else{
+                    button.setBackgroundResource(R.drawable.mainbutton01);
+                    isIconChange1 = true;
+                    isIconChange2 = true;
+                }
+                Intent intent = new Intent(MainActivity.this, SeriesActivity.class);
+                startActivity(intent);
+        }
+        });
+        button01 = (Button) findViewById(R.id.button01);
+        button01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isIconChange2){
+                    button01.setBackgroundResource(R.drawable.mainbutton2);
+                    isIconChange2 = false;
+                }else{
+                    button01.setBackgroundResource(R.drawable.mainbutton201);
+                    isIconChange2 = true;
+                    isIconChange1 = true;
+                }
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+    @Override  protected void onRestart() {
+        super.onRestart();
+        if(isIconChange1){
+            button.setBackgroundResource(R.drawable.mainbutton);
+            isIconChange1 = false;
+        }else{
+            button.setBackgroundResource(R.drawable.mainbutton01);
+            isIconChange1 = true;
+        }
+        if(isIconChange2){
+            button01.setBackgroundResource(R.drawable.mainbutton2);
+            isIconChange2 = false;
+        }else{
+            button01.setBackgroundResource(R.drawable.mainbutton201);
+            isIconChange2 = true;
+        }
+    }
 }
 ```
