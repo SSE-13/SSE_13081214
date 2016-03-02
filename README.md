@@ -2,14 +2,16 @@
 
 
 >* **个人信息**
-  * 姓名：`尹睿尧`
+  * ~~姓名：名字什么的不重要~~
+  * 姓名：`尹睿尧` *（还是不装逼了O_O）*
   * 学号：`13081214`
 
 
 >* __兴趣爱好__
   * [游戏王](http://baike.baidu.com/link?url=srpaeSWafznTo3G5x1u1DyGfbM7BB7IM7jlgeBuikFMMdtRAotm1wjMQHYavx55UT0c87Nw6CSNykbzlyOJyoSVkhFCJ8F2_Fbe_ttFSAdW)
   * [游戏王](http://baike.baidu.com/link?url=srpaeSWafznTo3G5x1u1DyGfbM7BB7IM7jlgeBuikFMMdtRAotm1wjMQHYavx55UT0c87Nw6CSNykbzlyOJyoSVkhFCJ8F2_Fbe_ttFSAdW)
-  * [游戏王](http://baike.baidu.com/link?url=srpaeSWafznTo3G5x1u1DyGfbM7BB7IM7jlgeBuikFMMdtRAotm1wjMQHYavx55UT0c87Nw6CSNykbzlyOJyoSVkhFCJ8F2_Fbe_ttFSAdW) *（重要的事情说三遍O(∩_∩)O）*
+  * [游戏王](http://baike.baidu.com/link?url=srpaeSWafznTo3G5x1u1DyGfbM7BB7IM7jlgeBuikFMMdtRAotm1wjMQHYavx55UT0c87Nw6CSNykbzlyOJyoSVkhFCJ8F2_Fbe_ttFSAdW)
+  *（重要的事情说三遍O(∩_∩)O）*
   
   
   
@@ -19,7 +21,7 @@
   ![](http://imgsrc.baidu.com/forum/pic/item/8e330bb30f2442a732602ce7d743ad4bd01302ec.jpg)
 
 
->* __代码片段__
+>* __代码片段__(代码节选自上学期做的一个APP)
 ```
 package com.yugioh;
 import android.app.Activity;
