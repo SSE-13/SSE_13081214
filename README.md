@@ -2,9 +2,10 @@
 
 
 >* **个人信息**
-  * ~~姓名：名字什么的不重要~~
-  * 姓名：`尹睿尧` *（还是不装逼了O_O）*
-  * 学号：`13081214`
+  * 你是谁：`尹睿尧` 
+  * 你从哪里来：[湖南资兴](http://baike.baidu.com/link?url=ziy9jMmPeqNzdsd2rb6bTENGLFpH5m_xXV6OaKg5FysWM8UlSzyJ5N9a019lZ-HliqfIBWN7b_EX6AhOKCM8La)
+  * 你要到哪里去：`未知` 
+  * 北工大唯一指定编号：`13081214`
 
 
 >* __兴趣爱好__
