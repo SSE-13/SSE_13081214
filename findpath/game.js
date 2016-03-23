@@ -23,24 +23,25 @@ var game;
             grid.setWalkable(5, 5, false);
         }
         WorldMap.prototype.render = function (context) {
-            context.fillStyle = '#0000FF';
+            //context.fillStyle = '#0000FF';
             context.strokeStyle = '#FF0000';
             context.beginPath();
             for (var i = 0; i < NUM_COLS; i++) {
                 for (var j = 0; j < NUM_ROWS; j++) {
-                    if (this.grid.getNode(i, j).walkable) {
-                        context.fillStyle = '#0000FF';
-                        context.rect(i * GRID_PIXEL_WIDTH, j * GRID_PIXEL_HEIGHT, GRID_PIXEL_WIDTH, GRID_PIXEL_HEIGHT);
+                    if (!this.grid.getNode(i, j).walkable) {
+                        context.fillRect(i * GRID_PIXEL_WIDTH, (j - 1) * GRID_PIXEL_HEIGHT, GRID_PIXEL_WIDTH, GRID_PIXEL_HEIGHT);
+                        context.fillRect(i * GRID_PIXEL_WIDTH, j * GRID_PIXEL_HEIGHT, GRID_PIXEL_WIDTH, GRID_PIXEL_HEIGHT);
+                        context.fillStyle = '#000000';
                     }
                     else {
-                        context.fillStyle = '#000000';
-                        context.fillRect(i * GRID_PIXEL_WIDTH, j * GRID_PIXEL_HEIGHT, GRID_PIXEL_WIDTH, GRID_PIXEL_HEIGHT);
+                        context.fillStyle = '#0000FF';
+                        context.rect(i * GRID_PIXEL_WIDTH, j * GRID_PIXEL_HEIGHT, GRID_PIXEL_WIDTH, GRID_PIXEL_HEIGHT);
+                        context.fill();
+                        context.stroke();
                     }
-                    context.fill();
-                    context.stroke();
                 }
+                context.closePath();
             }
-            context.closePath();
         };
         return WorldMap;
     }(DisplayObject));
@@ -64,9 +65,9 @@ var game;
         __extends(BoyBody, _super);
         function BoyBody() {
             _super.apply(this, arguments);
-            this.xarray = new Array();
-            this.yarray = new Array();
-            this.sum = 1;
+            this.xA = new Array();
+            this.yA = new Array();
+            this.s = 1;
         }
         BoyBody.prototype.run = function (grid) {
             grid.setStartNode(0, 0);
@@ -76,17 +77,18 @@ var game;
             var result = findpath.findPath(grid);
             var path = findpath._path;
             for (var i = 0; i < path.length; i++) {
-                this.xarray[i] = path[i].x;
-                this.yarray[i] = path[i].y;
+                this.xA[i] = path[i].x;
+                this.yA[i] = path[i].y;
             }
             console.log(path);
             console.log(grid.toString());
         };
         BoyBody.prototype.onTicker = function (duringTime) {
             if (this.x < NUM_ROWS * GRID_PIXEL_WIDTH && this.y < NUM_COLS * GRID_PIXEL_HEIGHT) {
-                this.x = this.xarray[this.sum] * GRID_PIXEL_WIDTH;
-                this.y = this.yarray[this.sum] * GRID_PIXEL_HEIGHT;
-                this.sum++;
+                this.x = this.xA[this.s] * GRID_PIXEL_WIDTH;
+                this.y = this.yA[this.s] * GRID_PIXEL_HEIGHT;
+                this.s++;
+                console.log(this.x, this.y);
             }
         };
         return BoyBody;
