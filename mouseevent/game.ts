@@ -1,6 +1,4 @@
 var humanContainer = new render.DisplayObjectContainer();
-
-
 var head = new render.Bitmap();
 var trunk = new render.Bitmap();
 var left_leg = new render.Bitmap();
@@ -8,8 +6,6 @@ var right_leg = new render.Bitmap();
 var left_arm = new render.Bitmap();
 var right_arm = new render.Bitmap();
 var human = new render.DisplayObjectContainer();
-
-
 
 head.source = "tou.png";
 trunk.source = "shenti.png";
@@ -34,8 +30,8 @@ renderCore.start(humanContainer, ["tou.png","shenti.png","zuojiao.png","youjiao.
 class HumanBody extends Body {
     
     
-    vx:number = 5;
-    r = Math.PI/2;
+    vx:number = 3;
+    r = Math.PI/3;
     
 
     onTicker(duringTime: number) {
@@ -48,7 +44,8 @@ class HumanBody extends Body {
 var ticker = new Ticker();
 var body = new HumanBody(humanContainer);
 
-body.vx = 2;
+body.vx = 3;
+body.x = 50;
 body.y = 200; 
 ticker.start([body]);
 
@@ -61,10 +58,9 @@ var isLeg = false;
 
 var HitTest = (localPoint:math.Point,displayObject:render.DisplayObject) =>{
     if(localPoint.x > 128  && localPoint.x <= 255 && localPoint.y > 0 && localPoint.y <= 120){
-        alert (`点击位置为${localPoint.x},${localPoint.y}`);
         isHead = true;
     }
-    //alert (`点击位置为${localPoint.x},${localPoint.y}`);
+    
     if(localPoint.x > 40 && localPoint.x < 170 && localPoint.y > 180 && localPoint.y < 310 
     || localPoint.x > 220 && localPoint.x < 350 && localPoint.y > 180 && localPoint.y < 310){
         isLeg = true;
@@ -79,14 +75,18 @@ var OnClick = () => {
         }
         
      if(isLeg && !isHead){
+        body.x = 50;
+        body.y = 200; 
         body.vx = 0;
         body.r = 0;
         body.rotation = 0;
     }
     
     if(isHead && isLeg) {
-        body.vx = 2;
-        body.r = Math.PI/2;
+        body.vx = 3;
+        body.x = 50;
+        body.y = 200; 
+        body.r = Math.PI/3;
         isLeg = false;
         isHead = false;
         }
