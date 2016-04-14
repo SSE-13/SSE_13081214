@@ -1,9 +1,6 @@
 
 import * as fs from 'fs';
 
-
-
-
 function readFile() {
     var map_path = __dirname + "/map.json"
     var content = fs.readFileSync(map_path, "utf-8");
@@ -21,7 +18,6 @@ function createMapEditor() {
 
     for(var row = 0; row <rows; row++) {
            map[row] = new Array();
-           
         for(var col= 0; col <cols; col++){
             
             var tile = new editor.Tile();
@@ -34,12 +30,9 @@ function createMapEditor() {
             tile.width = editor.GRID_PIXEL_WIDTH;
             tile.height = editor.GRID_PIXEL_HEIGHT;
             world.addChild(tile);
-
             eventCore.register(tile, events.displayObjectRectHitTest, onTileClick);  
         }
     }
-    
-    
     return world;
 
 }
@@ -49,7 +42,7 @@ function Save() {
     var save = new render.DisplayObjectContainer();
     
     var bg = new render.Rect();
-    bg.width = 55;
+    bg.width = 50;
     bg.height = 30;
     bg.color = '#FFFF00';
     
@@ -58,9 +51,7 @@ function Save() {
     
     save.addChild(bg);
     save.addChild(title);
-    
     eventCore.register(save, events.displayObjectRectHitTest, onSaveClick);
-       
     return save;
     
 }
@@ -72,19 +63,16 @@ function onTileClick(tile: editor.Tile) {
     
     
     switch (tile.color) {
-                case '#FF0000':
+                case '#FF00FF':
                     tile.setWalkable(1);
                     break;
-                case '#0000FF':
+                case '#00FFFF':
                     tile.setWalkable(0);
                     break;
-            
                 default:
                     break;
             }
     map[tile.ownedRow][tile.ownedCol] = tile.num;
-            
-     
 }
 
 
@@ -98,11 +86,6 @@ function onSaveClick(){
         if (err) throw err;
         console.log('It\'s saved!');
     });
-    
-    
-    
-   
-    
 }
 
 
