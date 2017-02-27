@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0” />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>仿苹果</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial;
+    }
+    
+    .navbar.navbar-inverse {
+        border-radius: 0;
+    }
+    
+    #head {
+        line-height: 50px;
+        font-size: 14px;
+    }
+    
+    #head a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    #head a:hover {
+        color: #ccc;
+    }
+
+    #head>.container>.navbar-header>#xiangyingshianniu {
+        padding-top: 20px;
+    }
+    
+    #head>.container>.navbar-header>.navbar-toggle {
+        border: none;
+    }
+    
+    #head>.container>.navbar-header>.navbar-toggle:hover {
+        opacity: 0.1;
+    }
+    
+    #head>.container>.navbar-header>#shangdian {
+        padding: 0;
+    }
+    
+    #head>.container>.navbar-header>#pingguo {
+        padding: 0;
+        margin-right: 45%;
+    }
+    
+    #head>.container>.daohang>.row .daohang-item {
+        margin-left: 5%;
+        margin-right: 300%;
+    }
+    
+    #content {
+        background-color: white;
+        width: 100%;
+        margin-top: -20px;
+    }
+    
+    #content li {
+        list-style-type: none;
+    }
+    
+    #content>#myslider img {
+        width: 100%;
+    }
+    
+    #content>.waibu {
+        overflow: hidden;
+        margin: 1px 0;
+    }
+    
+    #content>.waibu img {
+        width: 109%;
+        margin: 1px;
+    }
+
+    #foot {
+        background-color: #f6f6f6;
+        font-size: 2px;
+    }
+    
+    #foot li {
+        list-style-type: none;
+        margin-top: 8px;
+    }
+    
+    #foot>.menu {
+        padding: 1% 15%;
+    }
+    
+    #foot>.menu a {
+        color: #888;
+        text-decoration: none;
+    }
+    
+    #foot>.menu a:hover {
+        text-decoration: underline;
+    }
+    
+    #foot>.menu>.Shop_and_Learn {
+        float: left;
+    }
+    
+    #foot>.menu>.Apple_Store,
+    #foot>.menu>.For,
+    #foot>.menu>.Account_and_Values,
+    #foot>.menu>.About_Apple {
+        float: left;
+        margin-left: 9%;
+    }
+    
+    #foot>.menu>.For>.For_Business,
+    #foot>.menu>..Account_and_Values>.Values {
+        margin-top: 30px;
+    }
+    
+    #foot>.weibu {
+        clear: both;
+        margin: 0 15%;
+        padding-top:30px;
+        padding-bottom: 30px;
+        color: #888;
+    }
+    
+    #foot>.weibu a {
+        color: #3385ff;
+        text-decoration: none;
+    }
+    
+    #foot>.weibu a:hover {
+        text-decoration: underline;
+    }
+    
+    #foot>.weibu ul {
+        display: inline;
+    }
+    
+    #foot>.weibu li {
+        display: inline;
+        padding: 0 8px;
+        background-image: linear-gradient(to right, #f6f6f6, #ccc);
+        background-position: right;
+        background-size: 1px 15px;
+        background-repeat: no-repeat;
+    }
+    
+    #foot>.weibu li:last-child {
+        background: none;
+    }
+
+    #foot>.weibu>.bg{
+    	margin-top: -5px;
+    }
+    
+    #foot>.weibu>.weiba {
+        margin-top: -15px;
+    }
+    
+    #foot>.weibu>.weiba a {
+        color: #888;
+        text-decoration: none;
+    }
+    
+    #foot>.weibu>.weiba a:hover {
+        text-decoration: underline;
+    }
+    
+    #foot>.weibu>.weiba>.row>#copyright {
+        margin-right: -30px;
+    }
+    
+    #foot>.weibu>.weiba>.row ul {
+        margin-left: -8px;
+    }
+    
+    @media (max-width: 768px) {
+        .yincang {
+            display: none;
+        }
+        .america {
+            text-align: left;
+            margin:5px 0;
+        }
+        .bg{
+        	opacity: 0;
+        	margin-bottom: 10px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-inverse" id="head">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle pull-left" id="xiangyingshianniu" type="button" data-toggle="collapse" data-target=".daohang">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://www.apple.com/us/shop/goto/bag" class="navbar-toggle" id="shangdian"><span class="fa fa-shopping-bag fa-lg"></span></a>
+                <a href="http://www.apple.com/" class="navbar-toggle tubiao" id="pingguo"><span class="fa fa-apple fa-lg"></span></a>
+            </div>
+            <div class="collapse navbar-collapse daohang">
+                <div class="row">
+                    <div class="nav navbar-nav">
+                        <div class="col-md-1 col-sm-1"></div>
+                        <div class="col-md-1 col-sm-1">
+                            <div class="yincang">
+                                <a href="http://www.apple.com/" class="daohang-item"><span class="fa fa-apple fa-lg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1"><a href="http://www.apple.com/mac/" class="daohang-item">Mac</a></div>
+                        <div class="col-md-1 col-sm-1"><a href="http://www.apple.com/ipad/" class="daohang-item">iPad</a></div>
+                        <div class="col-md-1 col-sm-1"><a href="http://www.apple.com/iphnoe/" class="daohang-item">iPhone</a></div>
+                        <div class="col-md-1 col-sm-1"><a href="http://www.apple.com/watch/" class="daohang-item">Watch</a></div>
+                        <div class="col-md-1 col-sm-1"><a href="http://www.apple.com/tv/" class="daohang-item">TV</a></div>
+                        <div class="col-md-1 col-sm-1"><a href="http://www.apple.com/music/" class="daohang-item">Music</a></div>
+                        <div class="col-md-1 col-sm-1"><a href="https://support.apple.com/" class="daohang-item">Support</a></div>
+                        <div class="col-md-1 col-sm-1"><a href="http://www.apple.com/us/search" class="daohang-item"><span class="fa fa-search fa-lg"></span></a></div>
+                        <div class="col-md-1 col-sm-1">
+                            <div class="yincang">
+                                <a href="http://www.apple.com/" class="daohang-item"><span class="fa fa-shopping-bag fa-lg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="content">
+        <div class="carousel slide" id="myslider" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li class="active" data-target="#myslider" data-slide-to="0">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li data-target="#myslider" data-slide-to="1">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li data-target="#myslider" data-slide-to="2">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="##"><img src="http://imgsrc.baidu.com/forum/pic/item/d8e55d64034f78f0dd4704b970310a55b3191c30.jpg"></a>
+                </div>
+                <div class="item">
+                    <a href="##"><img src="http://imgsrc.baidu.com/forum/pic/item/bd59f9b30f2442a791bdb73fd843ad4bd0130285.jpg"></a>
+                </div>
+                <div class="item">
+                    <a href="##"><img src="http://imgsrc.baidu.com/forum/pic/item/15db2339b6003af386f896fa3c2ac65c1138b6f7.jpg"></a>
+                </div>
+            </div>
+            <a href="#myslider" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a href="#myslider" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+        <div class="waibu">
+            <div class="row">
+                <ul>
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <a href="#"><img src="http://imgsrc.baidu.com/forum/pic/item/704b0df2b21193133b1173306c380cd790238ded.jpg"></a>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <a href="#"><img src="http://imgsrc.baidu.com/forum/pic/item/95f5a466d0160924af912e9bdd0735fae7cd3486.jpg"></a>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <a href="#"><img src="http://imgsrc.baidu.com/forum/pic/item/8ae47c13632762d0a5c1283fa9ec08fa503dc6b8.jpg"></a>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <a href="#"><img src="http://imgsrc.baidu.com/forum/pic/item/c6d5111190ef76c6168077ab9416fdfaae5167ed.jpg"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <div class="menu">
+            <div class="Shop_and_Learn">
+                <ul>
+                    <li>Shop and Learn</li>
+                    <li><a href="http://www.apple.com/mac/">Mac</a></li>
+                    <li><a href="http://www.apple.com/ipad/">iPad</a></li>
+                    <li><a href="http://www.apple.com/iphnoe/">iPhone</a></li>
+                    <li><a href="http://www.apple.com/watch/">Watch</a></li>
+                    <li><a href="http://www.apple.com/tv/">TV</a></li>
+                    <li><a href="http://www.apple.com/music/">Music</a></li>
+                    <li><a href="http://www.apple.com/itunes/">iTunes</a></li>
+                    <li><a href="http://www.apple.com/ipod/">iPod</a></li>
+                    <li><a href="http://www.apple.com/shop/accessories/all-accessories">Accessories</a></li>
+                    <li><a href="http://www.apple.com/shop/gift-cards">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="Apple_Store">
+                <ul>
+                    <li>Apple Store</li>
+                    <li><a href="http://www.apple.com/retail/">Find a Store</a></li>
+                    <li><a href="http://www.apple.com/retail/">Genius Bar</a></li>
+                    <li><a href="http://www.apple.com/retail/">Workshops and Learning</a></li>
+                    <li><a href="http://www.apple.com/retail/">Youth Programs</a></li>
+                    <li><a href="http://www.apple.com/retail/">Apple Store App</a></li>
+                    <li><a href="http://www.apple.com/retail/">Refurbished and Clearance</a></li>
+                    <li><a href="http://www.apple.com/retail/">Financing</a></li>
+                    <li><a href="http://www.apple.com/retail/">Reuse and Recycling</a></li>
+                    <li><a href="http://www.apple.com/retail/">Order Status</a></li>
+                    <li><a href="http://www.apple.com/retail/">Shopping Help</a></li>
+                </ul>
+            </div>
+            <div class="For">
+                <div class="For_Education">
+                    <ul>
+                        <li>For Education</li>
+                        <li><a href="http://www.apple.com/education/">Apple and Education</a></li>
+                        <li><a href="http://www.apple.com/us-hed/shop">Shop for College</a></li>
+                    </ul>
+                </div>
+                <div class="For_Business">
+                    <ul>
+                        <li>For Business</li>
+                        <li><a href="http://www.apple.com/business/">Apple and Business</a></li>
+                        <li><a href="http://www.apple.com/retail/business/">Shop for Business</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Account_and_Values">
+                <div class="Account">
+                    <ul>
+                        <li>Account</li>
+                        <li><a href="https://appleid.apple.com/">Manage Your Apple ID</a></li>
+                        <li><a href="https://appleid.apple.com/">Apple Store Account</a></li>
+                        <li><a href="https://appleid.apple.com/">iCloud.com</a></li>
+                    </ul>
+                </div>
+                <div class="Values">
+                    <ul>
+                        <li>Values</li>
+                        <li><a href="http://www.apple.com/accessibility/">Accessibility</a></li>
+                        <li><a href="http://www.apple.com/accessibility/">Education</a></li>
+                        <li><a href="http://www.apple.com/accessibility/">Environment</a></li>
+                        <li><a href="http://www.apple.com/accessibility/">Inclusion and Diversity</a></li>
+                        <li><a href="http://www.apple.com/accessibility/">Privacy</a></li>
+                        <li><a href="http://www.apple.com/accessibility/">Supplier Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="About_Apple">
+                <ul>
+                    <li>About Apple</li>
+                    <li><a href="http://www.apple.com/about/">Apple Info</a></li>
+                    <li><a href="http://www.apple.com/about/">Newsroom</a></li>
+                    <li><a href="http://www.apple.com/about/">Job Opportunities</a></li>
+                    <li><a href="http://www.apple.com/about/">Press Info</a></li>
+                    <li><a href="http://www.apple.com/about/">Investors</a></li>
+                    <li><a href="http://www.apple.com/about/">Events</a></li>
+                    <li><a href="http://www.apple.com/about/">Contact Apple</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="weibu">
+            <p>More ways to shop: Visit an <a href="http://www.apple.com/retail/">Apple Store</a>, call 1-800-MY-APPLE, or
+                <a href="https://locate.apple.com">find a reseller</a>.</p>
+                <hr class="bg">
+                <div class="weiba">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-6 col-xs-12 pull-right">
+                            <div class="text-right america">
+                                <a href="http://www.apple.com/choose-your-country/"><img src="http://imgsrc.baidu.com/forum/w%3D580/sign=be23878812d5ad6eaaf964e2b1ca39a3/a409578b87d6277ff2178e7421381f30e924fc7a.jpg" >&nbsp;&nbsp;United States</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" id="copyright">
+                            Copyright © 2017 Apple Inc. All rights reserved.
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <ul>
+                                <li><a href="http://www.apple.com/about/">Privacy Policy</a></li>
+                                <li><a href="http://www.apple.com/about/">Terms of Use</a></li>
+                                <li><a href="http://www.apple.com/about/">Sales and Refunds</a></li>
+                                <li><a href="http://www.apple.com/about/">Legal</a></li>
+                                <li><a href="http://www.apple.com/about/">Site Map</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
