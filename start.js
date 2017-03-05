@@ -28,17 +28,20 @@ if (!root) {
 }
 
 if (root.indexOf('map_editor') != -1) {
-    openElectron();
+    openElectron('map_editor');
+}
+else if ( root.indexOf("gameengine") != -1){
+    openElectron('gameengine');
 }
 else {
     openExpressServer();
 }
 
-function openElectron() {
+function openElectron(projectPath) {
     var electronPath = path.join(getElectronFolder(), getElectronFileName());
     //检测 electron 是否存在
     if (fs.existsSync(electronPath)) {
-        var electron = createChildProcess(electronPath, ["map_editor"], function(data) {
+        var electron = createChildProcess(electronPath, [projectPath], function(data) {
         }, function() {
 
         });
@@ -123,6 +126,7 @@ function startTypescriptAutoCompiler() {
 
 
 function typescriptCompiler(req, res, next) {
+    console.log ("-----")
     var errorMessage = "";
     var tsc_path;
     if (os.platform() == 'win32') {
